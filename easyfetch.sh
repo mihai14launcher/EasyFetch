@@ -11,8 +11,7 @@ PURPLE='\033[0;35m'
 NC='\033[0m' # No Color
 
 # Check if Neofetch is installed; if not, install it
-if ! command -v neofetch &> /dev/null
-then
+if ! command -v neofetch &> /dev/null; then
     echo "Neofetch could not be found. Installing..."
     sudo apt-get update
     sudo apt-get install -y neofetch
@@ -90,48 +89,47 @@ get_os() {
 display_os_image() {
     case "$1" in
         *"Alpine Linux"*)
-            neofetch --ascii_distro alpine --ascii_colors ${CYAN//\\033[0;/}
+            neofetch --ascii_distro alpine --ascii_colors 6  # Cyan
             ;;
         *"Kali Linux"*)
-            neofetch --ascii_distro kali --ascii_colors ${BLUE//\\033[0;/}
+            neofetch --ascii_distro kali --ascii_colors 4  # Blue
             ;;
         *"Arch Linux"*)
-            neofetch --ascii_distro arch --ascii_colors ${CYAN//\\033[0;/}
+            neofetch --ascii_distro arch --ascii_colors 6  # Cyan
             ;;
         *"CentOS"*)
-            neofetch --ascii_distro centos --ascii_colors ${PURPLE//\\033[0;/}
+            neofetch --ascii_distro centos --ascii_colors 5  # Purple
             ;;
         *"Fedora Linux"*)
-            neofetch --ascii_distro fedora --ascii_colors ${BLUE//\\033[0;/}
+            neofetch --ascii_distro fedora --ascii_colors 4  # Blue
             ;;
         *"Ubuntu"*)
-            neofetch --ascii_distro ubuntu --ascii_colors ${RED//\\033[0;/}
+            neofetch --ascii_distro ubuntu --ascii_colors 1  # Red
             ;;
         *"Red Hat Enterprise Linux"*)
-            neofetch --ascii_distro rhel --ascii_colors ${RED//\\033[0;/}
+            neofetch --ascii_distro rhel --ascii_colors 1  # Red
             ;;
         *"SUSE Linux Enterprise"*)
-            neofetch --ascii_distro suse --ascii_colors ${GREEN//\\033[0;/}
+            neofetch --ascii_distro suse --ascii_colors 2  # Green
             ;;
         *"MX Linux"*)
-            neofetch --ascii_distro mx --ascii_colors ${BLUE//\\033[0;/}
+            neofetch --ascii_distro mx --ascii_colors 4  # Blue
             ;;
         *"Manjaro"*)
-            neofetch --ascii_distro manjaro --ascii_colors ${GREEN//\\033[0;/}
+            neofetch --ascii_distro manjaro --ascii_colors 2  # Green
             ;;
         *"Linux Mint"*)
-            neofetch --ascii_distro mint --ascii_colors ${GREEN//\\033[0;/}
+            neofetch --ascii_distro mint --ascii_colors 2  # Green
             ;;
         *"Raspbian"*)
-            neofetch --ascii_distro raspbian --ascii_colors ${RED//\\033[0;/}
+            neofetch --ascii_distro raspbian --ascii_colors 1  # Red
             ;;
         *)
-            echo -e "${WHITE}            .---.
-${WHITE}         .--------.
-${WHITE}       .--( . . )--.
-${WHITE}        (    \/    )
-${WHITE}         `-------'
-${NC}"
+            echo -e "${WHITE}            .---.${NC}"
+            echo -e "${WHITE}         .--------.${NC}"
+            echo -e "${WHITE}       .--( . . )--.${NC}"
+            echo -e "${WHITE}        (    \\/    )${NC}"
+            echo -e "${WHITE}         `-------'${NC}"
             ;;
     esac
 }
